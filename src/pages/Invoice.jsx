@@ -5,7 +5,7 @@ import Tables from '../components/Tables/Tables';
 import invoiceAction from '../store/actions/invoiceAction';
 import createAction from '../store/actions/createAction';
 import { modalClose } from '../store/reducers/modalReducer';
-
+import deleteAction from '../store/actions/deleteAction'
 const tableTitles = [
   '#',
   'Названия',
@@ -43,6 +43,10 @@ function Invoice() {
     setForm(initialState)
   }
 
+  const onDeleteInvoice = (id) => {
+    dispatch(deleteAction('incoming-invoice/delete',id))
+  }
+
   return (
     <>
       <div className="content-header">
@@ -72,6 +76,14 @@ function Invoice() {
               <td>{item.contractAmount}</td>
               <td>{item.invoiceNumber}</td>
               <td>{item.createdAt}</td>
+              <td className='d-flex'>
+                <div className="btn-sm btn-primary ml-2">
+                  <i className="fas fa-pencil-alt"></i>
+                </div>
+                <div className="btn-sm btn-danger ml-2" onClick={() => onDeleteInvoice(item._id)}>
+                  <i className="fas fa-trash"></i>
+                </div>
+              </td>
             </tr>
           );
         })}

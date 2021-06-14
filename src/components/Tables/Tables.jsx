@@ -43,6 +43,7 @@ function Tables({ titleModal,titles, children }) {
                   {titles.map((item, i) => {
                     return <th key={item + i}>{item}</th>;
                   })}
+                  <th>Операция</th>
                 </tr>
               </thead>
               <tbody>

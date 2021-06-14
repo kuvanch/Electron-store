@@ -75,10 +75,10 @@ function SideBar() {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link to="/store" className="nav-link">
+                    <Link to="/sales" className="nav-link">
                       <i className="nav-icon fas fa-th" />
                       <p>
-                        Выберите склад
+                        Продажи
                       </p>
                     </Link>
                   </li>

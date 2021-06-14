@@ -9,6 +9,7 @@ import Invoice from './pages/Invoice'
 import Product from './pages/Product';
 import invoiceAction from './store/actions/invoiceAction';
 import productAction from './store/actions/productAction';
+import salesAction from './store/actions/salesAction';
 import Home from './pages/Home';
 const Hello = () => {
   return (
@@ -22,6 +23,7 @@ function App() {
   useEffect(() => {
     dispatch(invoiceAction());
     dispatch(productAction());
+    dispatch(salesAction());
   }, []);
   const {isAuth} = useSelector(state => state.auth)
   const app = <HashRouter>

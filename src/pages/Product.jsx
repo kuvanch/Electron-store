@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Modal from '../components/Modal/Modal';
 import Tables from '../components/Tables/Tables';
 import createAction from '../store/actions/createAction';
+import deleteAction from '../store/actions/deleteAction';
 import productAction from '../store/actions/productAction';
 import { modalClose } from '../store/reducers/modalReducer';
 
@@ -41,6 +42,9 @@ function Product() {
     dispatch(productAction());
     setForm(initialState);
   };
+   const onDeleteProduct = (id) => {
+    dispatch(deleteAction('invoice-product/delete',id))
+   }
   return (
     <>
       <div className="content-header">
@@ -69,6 +73,14 @@ function Product() {
               <td>{item.pricePerUnit}</td>
               <td>{item.unit}</td>
               <td>{item.createdAt}</td>
+              <td className='d-flex'>
+                <div className="btn-sm btn-primary ml-2">
+                  <i className="fas fa-pencil-alt"></i>
+                </div>
+                <div className="btn-sm btn-danger ml-2" onClick={() => onDeleteProduct(item._id)}>
+                  <i className="fas fa-trash"></i>
+                </div>
+              </td>
             </tr>
           );
         })}

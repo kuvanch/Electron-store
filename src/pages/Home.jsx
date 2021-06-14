@@ -124,10 +124,10 @@ function Home() {
               <div className="position-relative mb-4">
                 <div className="chartjs-size-monitor">
                   <div className="chartjs-size-monitor-expand">
-                    <div className />
+                    <div/>
                   </div>
                   <div className="chartjs-size-monitor-shrink">
-                    <div className />
+                    <div/>
                   </div>
                 </div>
                 <Bar data={dataBar} options={optionsBar} />
