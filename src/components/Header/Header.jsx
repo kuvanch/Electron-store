@@ -12,12 +12,12 @@ function Header() {
         </li>
         <li className="nav-item d-none d-sm-inline-block">
           <Link to='/' className="nav-link">
-            Home
+            Главная
           </Link>
         </li>
         <li className="nav-item d-none d-sm-inline-block">
           <a href="#" className="nav-link">
-            Contact
+            Справка
           </a>
         </li>
       </ul>

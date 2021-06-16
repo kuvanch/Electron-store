@@ -70,7 +70,7 @@ function SideBar() {
                     <Link to="/" className="nav-link">
                       <i className="nav-icon fas fa-tachometer-alt" />
                       <p>
-                        Главная
+                        Склад
                       </p>
                     </Link>
                   </li>

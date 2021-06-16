@@ -38,7 +38,6 @@ function Invoice() {
 
   const onCreateInvoice = () => {
     dispatch(createAction(form,'incoming-invoice/add'))
-    dispatch(invoiceAction());
     dispatch(modalClose())
     setForm(initialState)
   }

@@ -37,9 +37,7 @@ function Product() {
   }
   const onCreateProduct = () => {
     dispatch(createAction(form, 'invoice-product/add'));
-    dispatch(productAction());
     dispatch(modalClose());
-    dispatch(productAction());
     setForm(initialState);
   };
    const onDeleteProduct = (id) => {
@@ -157,6 +155,7 @@ function Product() {
               <div className="form-group">
                 <label>Select</label>
                 <select name='incomingInvoiceId' onChange={onChange} className="form-control">
+                  <option value="">Выберите Счет фактура</option>
                   {
                       dataInvoice.map((item,i) => {
                           return <option key={item._id} value={item._id}>{item.name}</option>
