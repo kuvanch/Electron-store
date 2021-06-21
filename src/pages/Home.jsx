@@ -6,6 +6,9 @@ import { Bar } from 'react-chartjs-2';
 function Home() {
   const dataInvoice = useSelector((state) => state.invoice.data);
   const dataProduct = useSelector((state) => state.product.data);
+  const dataUser = useSelector((state) => state.user.data);
+  const dataSales = useSelector((state) => state.sales.data);
+  console.log(dataSales);
   const invoiceNames = [];
   const invoiceAmounts = [];
   let sumInvoice = 0;
@@ -73,29 +76,29 @@ function Home() {
         <div className="col-lg-3 col-6">
           <div className="small-box bg-warning">
             <div className="inner">
-              <h3>44</h3>
-              <p>User Registrations</p>
+              <h3>{dataUser.length}</h3>
+              <p>Работники</p>
             </div>
             <div className="icon">
               <i className="fas fa-user-plus" />
             </div>
-            <a href="#" className="small-box-footer">
-              More info <i className="fas fa-arrow-circle-right" />
-            </a>
+            <Link to="/users" className="small-box-footer">
+              Подробнее <i className="fas fa-arrow-circle-right" />
+            </Link>
           </div>
         </div>
         <div className="col-lg-3 col-6">
           <div className="small-box bg-danger">
             <div className="inner">
-              <h3>65</h3>
-              <p>Unique Visitors</p>
+              <h3>{dataSales.sales.length}</h3>
+              <p>Продажи</p>
             </div>
             <div className="icon">
               <i className="fas fa-chart-pie" />
             </div>
-            <a href="#" className="small-box-footer">
-              More info <i className="fas fa-arrow-circle-right" />
-            </a>
+            <Link to='/sales' className="small-box-footer">
+              Подробнее <i className="fas fa-arrow-circle-right" />
+            </Link>
           </div>
         </div>
       </div>
@@ -117,17 +120,17 @@ function Home() {
                   <span className="text-success">
                     <i className="fas fa-arrow-up" /> 33.1%
                   </span>
-                  <span className="text-muted">Since last month</span>
+                  <span className="text-muted">За прошлого мес</span>
                 </p>
               </div>
               {/* /.d-flex */}
               <div className="position-relative mb-4">
                 <div className="chartjs-size-monitor">
                   <div className="chartjs-size-monitor-expand">
-                    <div/>
+                    <div />
                   </div>
                   <div className="chartjs-size-monitor-shrink">
-                    <div/>
+                    <div />
                   </div>
                 </div>
                 <Bar data={dataBar} options={optionsBar} />
@@ -138,120 +141,27 @@ function Home() {
         <div className="col-lg-6">
           <div className="card">
             <div className="card-header border-0">
-              <h3 className="card-title">Продажы</h3>
-              <div className="card-tools">
-                <a href="#" className="btn btn-tool btn-sm">
-                  <i className="fas fa-download" />
-                </a>
-                <a href="#" className="btn btn-tool btn-sm">
-                  <i className="fas fa-bars" />
-                </a>
-              </div>
+              <h3 className="card-title">Работники</h3>
             </div>
             <div className="card-body table-responsive p-0">
               <table className="table table-striped table-valign-middle">
                 <thead>
                   <tr>
-                    <th>Продукт</th>
-                    <th>Цена</th>
-                    <th>Количество</th>
-                    <th>Дата</th>
+                    <th>#</th>
+                    <th>Имя</th>
+                    <th>Должность</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
-                      <img
-                        src="dist/img/default-150x150.png"
-                        alt="Product 1"
-                        className="img-circle img-size-32 mr-2"
-                      />
-                      Some Product
-                    </td>
-                    <td>$13 USD</td>
-                    <td>
-                      <small className="text-success mr-1">
-                        <i className="fas fa-arrow-up" />
-                        12%
-                      </small>
-                      12,000 Sold
-                    </td>
-                    <td>
-                      <a href="#" className="text-muted">
-                        <i className="fas fa-search" />
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img
-                        src="dist/img/default-150x150.png"
-                        alt="Product 1"
-                        className="img-circle img-size-32 mr-2"
-                      />
-                      Another Product
-                    </td>
-                    <td>$29 USD</td>
-                    <td>
-                      <small className="text-warning mr-1">
-                        <i className="fas fa-arrow-down" />
-                        0.5%
-                      </small>
-                      123,234 Sold
-                    </td>
-                    <td>
-                      <a href="#" className="text-muted">
-                        <i className="fas fa-search" />
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img
-                        src="dist/img/default-150x150.png"
-                        alt="Product 1"
-                        className="img-circle img-size-32 mr-2"
-                      />
-                      Amazing Product
-                    </td>
-                    <td>$1,230 USD</td>
-                    <td>
-                      <small className="text-danger mr-1">
-                        <i className="fas fa-arrow-down" />
-                        3%
-                      </small>
-                      198 Sold
-                    </td>
-                    <td>
-                      <a href="#" className="text-muted">
-                        <i className="fas fa-search" />
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img
-                        src="dist/img/default-150x150.png"
-                        alt="Product 1"
-                        className="img-circle img-size-32 mr-2"
-                      />
-                      Perfect Item
-                      <span className="badge bg-danger">NEW</span>
-                    </td>
-                    <td>$199 USD</td>
-                    <td>
-                      <small className="text-success mr-1">
-                        <i className="fas fa-arrow-up" />
-                        63%
-                      </small>
-                      87 Sold
-                    </td>
-                    <td>
-                      <a href="#" className="text-muted">
-                        <i className="fas fa-search" />
-                      </a>
-                    </td>
-                  </tr>
+                  {dataUser.map((item, i) => {
+                    return (
+                      <tr key={item._id}>
+                        <td>{i + 1}</td>
+                        <td>{item.login}</td>
+                        <td>{item.role}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>

@@ -16,7 +16,6 @@ function SideBar() {
         />
         <span className="brand-text font-weight-light">Smart Store</span>
       </div>
-      {/* Sidebar */}
       <div className="sidebar os-host os-theme-light os-host-overflow os-host-overflow-y os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-transition">
         <div className="os-resize-observer-host observed">
           <div
@@ -43,7 +42,6 @@ function SideBar() {
               className="os-content"
               style={{ padding: '0px 8px', height: '100%', width: '100%' }}
             >
-              {/* Sidebar user panel (optional) */}
               <div className="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div className="image">
                   <img

@@ -1,4 +1,5 @@
 import axios from "axios"
+import {salesData} from '../reducers/salesReducer'
 const salesAction = (link) => {
     return dispatch => {
         axios({
@@ -8,7 +9,7 @@ const salesAction = (link) => {
                 'Authorization': `token ${localStorage.getItem('token')}`
             }
         })
-        .then(res => console.log(res.data))
+        .then(res => dispatch(salesData(res.data.data)))
         .catch( err => console.log(err))
     }
 }

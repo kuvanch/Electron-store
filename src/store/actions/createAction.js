@@ -1,4 +1,5 @@
 import axios from "axios"
+import { salesData } from "../reducers/salesReducer"
 import invoiceAction from './invoiceAction'
 import productAction from './productAction'
 const createAction = (data,link) => {
@@ -12,6 +13,7 @@ const createAction = (data,link) => {
             if(res.status === 201) {
                 dispatch(productAction());
                 dispatch(invoiceAction());
+                dispatch(salesData())
             }
         })
     }
